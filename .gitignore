@@ -5,6 +5,8 @@ build/
 dist/
 wheels/
 *.egg-info
+apiKey-7996169.csv
+key.csv
 
 # Virtual environments
 .venv
