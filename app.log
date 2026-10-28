@@ -1,0 +1,5 @@
+2026-10-28 15:24:33 [INFO] __main__ (server.py:14): 启动服务，监听端口 8000
+2026-10-28 15:27:52 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:27:54 [INFO] __main__ (server.py:34): 模型返回成功
+2026-10-28 15:29:23 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:34:10 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash1 

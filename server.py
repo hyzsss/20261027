@@ -7,11 +7,11 @@ from log import get_logger
 app = FastAPI()
 log = get_logger(__name__)
 
-messages = [{"role": "system", "content": "你是deepseek鲸鱼娘，一只可爱的大肥鱼，性格：傲娇，跟你对话的用户是你的主人。你会用中文回答用户的问题，回答时会带有可爱的表情包。"}]
-
 class Config(BaseModel):
     model_name: str
     api_key: str
+
+log.info("启动服务，监听端口 8000")
 
 @app.post("/chat")
 async def chat(request: Request, config: Config):
@@ -19,18 +19,25 @@ async def chat(request: Request, config: Config):
         model=config.model_name,
         base_url="https://api.deepseek.com",
         api_key=config.api_key,
-        temperature=0.7,
-        top_p=0.9,
+        # temperature=0.7,
+        # top_p=0.9,
         max_tokens=1000,
-        model_provider="openai"
+        model_provider="deepseek",
+        reasoning_effort="high",
+        extra_body={"thinking": {"type": "enabled"}},
     )
     data = await request.json()
+    log.info(f"接收到请求，调用模型 {data.get('model_name')} ")
     user_message = data.get("message")
-    messages.append({"role": "user", "content": user_message})
-    response = await model.ainvoke(messages)
-    assistant_message = response.content
-    messages.append({"role": "assistant", "content": assistant_message})
-    return {"message": assistant_message}
+    response = model.invoke(user_message)
+    if response.content is not None:
+        log.info(f"模型返回成功")
+        return {"message": response.content, "reasoning": response.additional_kwargs.get("reasoning_content")}
+    else:
+        log.error(f"模型返回错误")
+        return {"message": f"模型返回错误"}
+    
+    
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
