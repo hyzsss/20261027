@@ -10,3 +10,7 @@ key.csv
 
 # Virtual environments
 .venv
+
+# TLS
+cert.pem
+key.pem

@@ -17,3 +17,26 @@
 2026-10-28 15:48:29 [INFO] __main__ (server.py:35): 模型返回成功
 2026-10-28 15:48:54 [INFO] __main__ (server.py:31): 接收到请求，调用模型 deepseek-flash 
 2026-10-28 15:48:56 [INFO] __main__ (server.py:35): 模型返回成功
+2026-10-28 10:08:56 [INFO] __main__ (server.py:14): 启动服务，监听端口 8000
+2026-10-28 10:09:07 [INFO] __main__ (server.py:14): 启动服务，监听端口 8000
+2026-10-28 10:09:30 [INFO] __main__ (server.py:31): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 10:09:32 [INFO] __main__ (server.py:35): 模型返回成功
+2026-10-28 10:48:59 [INFO] __main__ (server.py:23): 启动服务，监听端口 8000
+2026-10-28 10:49:06 [WARNING] __main__ (server.py:28): 未授权请求被拒绝
+2026-10-28 10:49:06 [WARNING] __main__ (server.py:28): 未授权请求被拒绝
+2026-10-28 10:49:07 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 10:49:07 [ERROR] __main__ (server.py:53): 异常: Error code: 401 - Authentication Fails, Your api key: ****-key is invalid (request_id: 28d33252-e6b6-447d-8b35-6513932e4697)
+2026-10-28 11:01:49 [WARNING] __main__ (server.py:28): 未授权请求被拒绝
+2026-10-28 11:03:48 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 11:03:51 [INFO] __main__ (server.py:47): 模型返回成功
+2026-10-28 11:08:18 [INFO] __main__ (server.py:23): 启动服务，监听端口 8000
+2026-10-28 11:08:26 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 11:08:26 [ERROR] __main__ (server.py:53): 异常: Error code: 401 - Authentication Fails, Your api key: ****alid is invalid (request_id: 9573df93-b862-4589-b5dc-981e78f53f73)
+2026-10-28 11:15:59 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 11:16:01 [INFO] __main__ (server.py:47): 模型返回成功
+2026-10-28 11:16:35 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 11:16:38 [INFO] __main__ (server.py:47): 模型返回成功
+2026-10-28 11:17:11 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 11:17:13 [INFO] __main__ (server.py:47): 模型返回成功
+2026-10-28 11:17:39 [INFO] __main__ (server.py:43): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 11:17:41 [INFO] __main__ (server.py:47): 模型返回成功

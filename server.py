@@ -1,11 +1,20 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Header, HTTPException
 from pydantic import BaseModel
+import os
+import secrets
 import uvicorn
 from langchain.chat_models import init_chat_model
 from log import get_logger
 
 app = FastAPI()
 log = get_logger(__name__)
+
+# 访问 token:可通过环境变量 API_TOKEN 覆盖(修改后需重启服务)
+TOKEN = os.getenv("API_TOKEN", "f5ae63dd14fedfb1b85b4aa72f3e84b3")
+
+
+def check_token(authorization: str | None) -> bool:
+    return bool(authorization) and secrets.compare_digest(authorization, f"Bearer {TOKEN}")
 
 class Config(BaseModel):
     model_name: str
@@ -14,7 +23,10 @@ class Config(BaseModel):
 log.info("启动服务，监听端口 8000")
 
 @app.post("/chat")
-async def chat(request: Request, config: Config):
+async def chat(request: Request, config: Config, authorization: str | None = Header(default=None)):
+    if not check_token(authorization):
+        log.warning("未授权请求被拒绝")
+        raise HTTPException(status_code=401, detail="无效或缺失的 token")
     try:
         model = init_chat_model(
             model=config.model_name,
@@ -43,4 +55,4 @@ async def chat(request: Request, config: Config):
     
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000, ssl_certfile="cert.pem", ssl_keyfile="key.pem")
