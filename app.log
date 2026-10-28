@@ -3,3 +3,17 @@
 2026-10-28 15:27:54 [INFO] __main__ (server.py:34): 模型返回成功
 2026-10-28 15:29:23 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash 
 2026-10-28 15:34:10 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash1 
+2026-10-28 15:39:36 [INFO] __main__ (server.py:14): 启动服务，监听端口 8000
+2026-10-28 15:39:52 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:39:54 [INFO] __main__ (server.py:34): 模型返回成功
+2026-10-28 15:39:59 [INFO] __main__ (server.py:30): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:40:02 [INFO] __main__ (server.py:34): 模型返回成功
+2026-10-28 15:45:52 [INFO] __main__ (server.py:14): 启动服务，监听端口 8000
+2026-10-28 15:46:44 [INFO] __main__ (server.py:31): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:46:44 [ERROR] __main__ (server.py:41): 异常: Error code: 401 - Authentication Fails, Your api key: 123 is invalid (request_id: cb7b7f0c-9fa0-435e-86ae-3b548e811a2e)
+2026-10-28 15:47:53 [INFO] __main__ (server.py:31): 接收到请求，调用模型 deepseek-flash8 
+2026-10-28 15:47:53 [ERROR] __main__ (server.py:41): 异常: Error code: 400 - The supported API model names are deepseek-flash, deepseek-v4-pro, but you passed deepseek-flash8. (request_id: 81a1af7b-e599-42ac-b79c-89b7564e55b9)
+2026-10-28 15:48:27 [INFO] __main__ (server.py:31): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:48:29 [INFO] __main__ (server.py:35): 模型返回成功
+2026-10-28 15:48:54 [INFO] __main__ (server.py:31): 接收到请求，调用模型 deepseek-flash 
+2026-10-28 15:48:56 [INFO] __main__ (server.py:35): 模型返回成功

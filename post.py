@@ -25,7 +25,7 @@ while True:
         if response.json().get("reasoning"):
             reasoning_content = response.json().get("reasoning")
             print("thinking:", reasoning_content)
-        print("assistant:", assistant_message)
+        print("response:", assistant_message)
         messages.append({"role": "assistant", "content": assistant_message})
     else:
         print("Error:", response.status_code, response.text)
